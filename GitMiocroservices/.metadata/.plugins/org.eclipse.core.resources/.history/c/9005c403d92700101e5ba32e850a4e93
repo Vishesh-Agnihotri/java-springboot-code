@@ -1,0 +1,62 @@
+package com.example.BankingApplication.mapper;
+
+import com.example.BankingApplication.entity.Passbook;
+import com.example.BankingApplication.entity.User;
+import com.example.BankingApplication.model.PassbookModel;
+import com.example.BankingApplication.model.UserPassbookModel;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-05-03T10:08:23+0530",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.6 (Eclipse Adoptium)"
+)
+@Component
+public class PassbookMapperImpl implements PassbookMapper {
+
+    @Override
+    public List<PassbookModel> passbookListToPassbookModelList(List<Passbook> passBookList) {
+        if ( passBookList == null ) {
+            return null;
+        }
+
+        List<PassbookModel> list = new ArrayList<PassbookModel>( passBookList.size() );
+        for ( Passbook passbook : passBookList ) {
+            list.add( passbookToPassbookModel( passbook ) );
+        }
+
+        return list;
+    }
+
+    @Override
+    public UserPassbookModel userToUserPassBookModel(User user) {
+        if ( user == null ) {
+            return null;
+        }
+
+        UserPassbookModel userPassbookModel = new UserPassbookModel();
+
+        userPassbookModel.setFirstName( user.getFirstName() );
+        userPassbookModel.setEmail( user.getEmail() );
+
+        return userPassbookModel;
+    }
+
+    protected PassbookModel passbookToPassbookModel(Passbook passbook) {
+        if ( passbook == null ) {
+            return null;
+        }
+
+        PassbookModel passbookModel = new PassbookModel();
+
+        passbookModel.setDateTime( passbook.getDateTime() );
+        passbookModel.setCredit( passbook.getCredit() );
+        passbookModel.setDebit( passbook.getDebit() );
+        passbookModel.setTotal( passbook.getTotal() );
+
+        return passbookModel;
+    }
+}

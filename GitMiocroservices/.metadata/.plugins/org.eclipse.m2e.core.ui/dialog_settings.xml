@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\GitMiocroservices"/>
+			<item value="D:\GitMiocroservices\SpringBoot_JWT_Demo"/>
+			<item value="D:\GitMiocroservices\springboot-jwt-demo"/>
+			<item value="D:\GitMiocroservices\DemoJwtSpringboot"/>
+			<item value="D:\GitMiocroservices\jwt-demo"/>
+			<item value="D:\GitMiocroservices\spring-api-gateway"/>
+			<item value="D:\GitMiocroservices\Banking-Application-Rest-API\BankingApplication"/>
+			<item value="D:\GitMiocroservices\Banking-Application-Rest-API"/>
+			<item value="D:\GitMiocroservices\springboot-weather-forecast"/>
+			<item value="D:\GitMiocroservices\spring-boot-testing"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

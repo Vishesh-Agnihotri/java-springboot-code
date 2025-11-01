@@ -1,0 +1,42 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.example.demo.model.Employee;
+import com.example.demo.repository.EmployeeRepository;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+
+import com.example.demo.model.Employee;
+import com.example.demo.repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/employees")
+public class EmployeeController {
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+    // Fetch all employees using JPQL query
+    @GetMapping("/all")
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAllEmployees();
+    }
+
+    // Fetch all employees using native SQL query
+    @GetMapping("/all-native")
+    public List<Employee> getAllEmployeesNative() {
+        return employeeRepository.findAllEmployeesNative();
+    }
+}

@@ -1,0 +1,22 @@
+package com.example.BankingApplication.mapper;
+
+import java.util.List;
+
+import org.mapstruct.Mapper;
+
+import com.example.BankingApplication.entity.Account;
+import com.example.BankingApplication.entity.Passbook;
+import com.example.BankingApplication.entity.User;
+import com.example.BankingApplication.model.PassbookAccountModel;
+import com.example.BankingApplication.model.PassbookModel;
+import com.example.BankingApplication.model.UserPassbookModel;
+
+@Mapper(componentModel = "spring")
+public interface PassbookMapper {
+
+    List<PassbookModel> passbookListToPassbookModelList(List<Passbook> passBookList);
+    //PassbookAccountModel accountToPassbookAccountModel(Account account);
+
+
+    UserPassbookModel userToUserPassBookModel(User user);
+}

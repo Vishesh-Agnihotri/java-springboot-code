@@ -1,0 +1,4 @@
+GitRepositoriesView.GitDirectories=D\:\\GitMiocroservices\\springboot-weather-forecast\\.git;D\:\\GitMiocroservices\\Banking-Application-Rest-API\\.git;D\:\\GitMiocroservices\\SpringBoot_JWT_Demo\\.git;D\:\\GitMiocroservices\\springboot-jwt-demo\\.git;D\:\\GitMiocroservices\\spring-api-gateway\\.git;D\:\\GitMiocroservices\\spring-boot-testing\\.git;D\:\\GitMiocroservices\\DemoJwtSpringboot\\.git;D\:\\GitMiocroservices\\jwt-demo\\.git;
+GitRepositoriesView.GitDirectories.relative=springboot-weather-forecast\\.git;Banking-Application-Rest-API\\.git;SpringBoot_JWT_Demo\\.git;springboot-jwt-demo\\.git;spring-api-gateway\\.git;spring-boot-testing\\.git;DemoJwtSpringboot\\.git;jwt-demo\\.git;
+core_autoIgnoreDerivedResources=false
+eclipse.preferences.version=1

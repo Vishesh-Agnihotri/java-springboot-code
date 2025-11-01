@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;spring-authors-sql&apos; to &apos;spring-students-sql&apos;" description="Rename resource &apos;spring-authors-sql&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/spring-authors-sql" name="spring-students-sql" stamp="1754814516713" updateReferences="true"/>
+</session>

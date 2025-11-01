@@ -1,0 +1,91 @@
+package com.example.demo.controller;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.exception.EmployeeNotFoundException;
+import com.example.demo.model.Employee;
+import com.example.demo.repository.EmployeeRepository;
+
+@RestController
+@RequestMapping("/api/employees")
+public class EmployeeController {
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+    // Fetch all employees using JPQL query
+    @GetMapping("/all")
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAllEmployees();
+    }
+
+    // Fetch all employees using native SQL query
+   @GetMapping("/india")
+   public List<Employee> getIndianEmployee(@RequestParam String country){
+	   return employeeRepository.findIndianEmployee(country);
+   }
+   
+   @GetMapping("/{id}")
+   public Employee employeeById(@PathVariable Long id) {
+	   return employeeRepository.findEmployeeById(id)
+               .orElseThrow(() -> new EmployeeNotFoundException("Employee with ID " + id + " not found"));
+   }
+   
+   @PostMapping("/addEmployee")
+   public Employee addEmployee(@RequestBody Employee emp) {
+	   return employeeRepository.save(emp);
+   }
+   
+   @DeleteMapping("/{id}")
+   public String deleteById(@PathVariable Long id) {
+	   Optional<Employee> emp = employeeRepository.findById(id);
+	   if(emp.isPresent()) {
+		   employeeRepository.deleteById(id);
+           return "Employee with ID " + id + " deleted successfully!";
+	   }
+	   else {
+		   return "Id cannot be null";
+	   }
+   }
+   
+   @GetMapping("/departments")
+   public List<String> getDepartmentNames() {
+	 //fetching  department names
+		List<String> deptNames = employeeRepository.findAll().stream().map(Employee::getDepartment).collect(Collectors.toList());
+		return deptNames;
+		}
+   
+   @GetMapping("/empNameDept")
+   public Map<String,List<String>> getMethodName() {
+       Map<String,List<String>> empNameWithDept = employeeRepository.findAll().stream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.mapping(Employee::getName,Collectors.toList())));
+//       empNameWithDept.forEach((k,v)->{
+//    	  System.out.println("Department: "+ k);
+//    	  System.out.println("Employee: "+v);
+//       });
+       return empNameWithDept;
+   }
+   
+   @GetMapping("/sortSalary")
+   public Employee getEmployeeSorted() {
+       Employee emp = employeeRepository.findAll()
+    	        .stream()
+    	        .sorted(Comparator.comparingDouble(Employee::getSalary))
+    	        .collect(Collectors.toList());
+   }
+   
+   
+}

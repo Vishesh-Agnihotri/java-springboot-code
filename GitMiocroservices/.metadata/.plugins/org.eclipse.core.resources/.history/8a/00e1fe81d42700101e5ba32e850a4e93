@@ -1,0 +1,42 @@
+public class Category {
+    private String id;
+    private String name;
+    private String description;
+
+    // Private constructor
+    private Category(CategoryBuilder builder) {
+        this.id = builder.id;
+        this.name = builder.name;
+        this.description = builder.description;
+    }
+
+    // Builder class
+    public static class CategoryBuilder {
+        private String id;
+        private String name;
+        private String description;
+
+        public CategoryBuilder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public CategoryBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public CategoryBuilder description(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public Category build() {
+            return new Category(this);
+        }
+    }
+
+    public static CategoryBuilder builder() {
+        return new CategoryBuilder();
+    }
+}

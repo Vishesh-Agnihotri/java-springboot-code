@@ -1,0 +1,86 @@
+package com.fintech.apigateway.config.circuitbreaker;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
+@ConfigurationProperties(prefix = "resilience")
+@Getter
+@Setter
+public class ResilienceProperties {
+    public String getDefaultCircuitBreaker() {
+		return defaultCircuitBreaker;
+	}
+
+	public void setDefaultCircuitBreaker(String defaultCircuitBreaker) {
+		this.defaultCircuitBreaker = defaultCircuitBreaker;
+	}
+
+	public String getDefaultFallbackUri() {
+		return defaultFallbackUri;
+	}
+
+	public void setDefaultFallbackUri(String defaultFallbackUri) {
+		this.defaultFallbackUri = defaultFallbackUri;
+	}
+
+	public Retry getRetry() {
+		return retry;
+	}
+
+	public void setRetry(Retry retry) {
+		this.retry = retry;
+	}
+
+	private String defaultCircuitBreaker;
+    private String defaultFallbackUri;
+    private Retry retry = new Retry();
+
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    public static class Retry {
+        public int getAttempts() {
+			return attempts;
+		}
+
+		public void setAttempts(int attempts) {
+			this.attempts = attempts;
+		}
+
+		public List<HttpMethod> getMethods() {
+			return methods;
+		}
+
+		public void setMethods(List<HttpMethod> methods) {
+			this.methods = methods;
+		}
+
+		public Backoff getBackoff() {
+			return backoff;
+		}
+
+		public void setBackoff(Backoff backoff) {
+			this.backoff = backoff;
+		}
+
+		private int attempts;
+        private List<HttpMethod> methods;
+        private Backoff backoff = new Backoff();
+
+        @Getter
+        @Setter
+        public static class Backoff {
+            private long firstDelayMs;
+            private long maxDelayMs;
+            private int factor;
+            private boolean jitter;
+        }
+    }
+}
