@@ -1,0 +1,11 @@
+package interviews.practice;
+
+import java.util.ArrayList;
+
+public class UniqueIntegers {
+	int a[]= {213,21,12,14,4,24,242,12,2,24,14};
+	
+	List<Integer> unique = new ArrayList<>();
+	
+	
+}

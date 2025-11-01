@@ -1,0 +1,9 @@
+package interviews.practice;
+
+public class StringLength {
+	public static void main(String[] args) {
+	String name = "vishesh";
+	char a[]=name.toCharArray();
+	System.out.println()
+	}
+}

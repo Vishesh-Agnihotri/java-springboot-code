@@ -1,0 +1,25 @@
+package interviews.practice;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class BubbleSort {
+	public static void main(String[]args) {
+		int a[]= {1,2,512,5,6,6123,6,712,6,2};
+
+		//Sorting array method 1
+		Arrays.sort(a);
+		System.out.println(Arrays.toString(a));
+
+		//Sorting array method 2
+		List<Integer> array = Arrays.asList(1,2,5,12,5,6,23,6,612,6);
+		Collections.sort(array);
+		System.out.println(array);
+		
+		//Sorting method 3
+		List<Integer> sortedArray = Arrays.stream(a).boxed().collect(Collectors.toList());
+		sortedArray.stream().sorted().collect(Collectors.toList());
+		System.out.println(sortedArray);
+	}
+
+}

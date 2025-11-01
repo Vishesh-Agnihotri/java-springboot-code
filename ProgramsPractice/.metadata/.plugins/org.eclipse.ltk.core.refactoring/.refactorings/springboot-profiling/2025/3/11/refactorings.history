@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy source folder &apos;resources&apos; to &apos;springboot-devtools&apos;&#x0D;&#x0A;- Original project: &apos;springboot-profiling&apos;&#x0D;&#x0A;- Destination element: &apos;springboot-devtools&apos;&#x0D;&#x0A;- Original element: &apos;springboot-profiling/src/main/resources&apos;" description="Copy source folder" element1="/src\/main\/resources=/maven.pomderived=/true=/" flags="6" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyRoots" roots="1" stamp="1741759947650" target="/springboot-devtools" version="1.0"/>
+</session>

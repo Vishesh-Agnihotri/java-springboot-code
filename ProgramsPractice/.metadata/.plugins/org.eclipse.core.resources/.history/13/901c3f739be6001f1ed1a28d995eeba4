@@ -1,0 +1,32 @@
+package interviews.practice;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class UniqueIntegers {
+	public static void main(String[] args) {
+		int a[] = { 213, 21, 12, 14, 4, 24, 242, 12, 2, 24, 14 };
+
+		//Method 1
+		List<Integer> unique = Arrays.stream(a).distinct().boxed().collect(Collectors.toList());
+		System.out.println(unique);
+		
+		//Method 2
+		HashMap<Integer,Integer>unique1 = new HashMap<>();
+		for(int digit:a) {
+			if(unique1.containsKey(digit)) {
+				unique1.put(digit, unique1.get(digit)+1);
+			}
+			else {
+				unique1.put(digit, 1);
+			}
+		}
+		for(Map.Entry<Integer, Integer> count:unique1.entrySet()){
+			if(count.getValue()==1) {
+				System.out.print(count.getKey());
+				System.out.print(",");
+			}
+		}
+		
+	}
+}
