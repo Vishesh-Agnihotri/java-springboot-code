@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;devtools&apos; to &apos;springboot-devtools&apos;" description="Rename resource &apos;devtools&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/devtools" name="springboot-devtools" stamp="1741759516920" updateReferences="true"/>
+</session>

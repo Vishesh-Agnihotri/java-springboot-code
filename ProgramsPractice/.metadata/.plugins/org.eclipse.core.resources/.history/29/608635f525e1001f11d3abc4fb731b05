@@ -1,0 +1,15 @@
+package interviews.practice;
+
+import java.util.*;
+
+public class UniqueElements {
+	public static void main(String[] args) {
+		String name = "Vishesh";
+		HashSet<Character> uniqueElements = new HashSet<>();
+		char nameArray[] = name.toCharArray();
+		for (char word : nameArray) {
+			uniqueElements.add(word);
+		}
+		System.out.println(uniqueElements);
+	}	
+}

@@ -1,0 +1,8 @@
+package interviews.practice;
+
+public class WordsNumber {
+	public static void main(String[]args) {
+		
+	}
+
+}

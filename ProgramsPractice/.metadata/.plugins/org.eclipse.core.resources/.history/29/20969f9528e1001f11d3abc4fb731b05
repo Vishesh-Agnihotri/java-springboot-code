@@ -1,0 +1,14 @@
+package interviews.practice;
+
+public class StringLength {
+	public static void main(String[] args) {
+	
+	//Calculating string length	
+	String name = "vishesh";
+	char a[]=name.toCharArray();
+	System.out.println(a.length);
+	
+	//Calculating only unique elements number
+	
+	}
+}

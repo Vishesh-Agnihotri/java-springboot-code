@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;springboot-lazy&apos;" deleteContents="true" description="Delete resource &apos;springboot-lazy&apos;" element1="/springboot-lazy" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1739687039950"/>&#x0A;<refactoring comment="Delete resource &apos;test&apos;" deleteContents="true" description="Delete resource &apos;test&apos;" element1="/test" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1740196565442"/>
+</session>
