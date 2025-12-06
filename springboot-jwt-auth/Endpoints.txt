@@ -1,0 +1,12 @@
+To fetch token:
+
+
+POST http://localhost:8080/login
+Body-> xxx-form-urlencoded
+username	user
+password	password
+
+
+
+
+GET http://localhost:8080/secure
